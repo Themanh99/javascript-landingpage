@@ -1,0 +1,81 @@
+* {
+  color: #fff;
+  font-size: 20px;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  width: 98vw;
+  grid-template-areas:
+    "hd hd hd hd hd hd"
+    "main main main main main main"
+    "ft ft ft ft ft ft";
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px auto 50px;
+  position: relative;
+}
+/* This is styles for header */
+.header {
+  background-color: bisque;
+  grid-area: hd;
+  position: fixed;
+  width: 98vw;
+  height: 100px;
+  top: 0;
+}
+
+.header > nav {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.header #nav-ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#nav-ul > li {
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.navbar > ul > li {
+  list-style-type: none;
+  top: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+/* This is styles for main */
+.main {
+  background-color: cadetblue;
+  grid-area: main;
+}
+
+.title-main {
+  font-size: 50px;
+}
+
+.main > section {
+  width: 30vw;
+  height: auto;
+}
+
+/* This is styles for footer */
+.footer {
+  background-color: azure;
+  grid-area: ft;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+}
