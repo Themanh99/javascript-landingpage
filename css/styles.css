@@ -1,7 +1,7 @@
 body {
-  color: #fff;
   font-size: 20px;
   scroll-behavior: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -16,25 +16,26 @@ body {
   grid-template-rows: 100px auto 50px;
   position: relative;
 }
+
 /* This is styles for header */
 .header {
-  background-color: bisque;
   grid-area: hd;
   position: fixed;
-  width: 98vw;
+  width: 100vw;
   height: 100px;
   top: 0;
+  background-color: #fff;
 }
 
 .header > nav {
   display: inline-block;
   height: 100%;
-  width: 100%;
+  width: 98%;
 }
 
 .header #nav-ul {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -42,8 +43,11 @@ body {
 }
 
 #nav-ul > li {
-  margin-left: 30px;
+  padding: 0 15px;
   cursor: pointer;
+  height: 100%;
+  align-items: center;
+  display: flex;
 }
 
 .navbar > ul > li {
@@ -55,30 +59,72 @@ body {
   text-decoration: none;
 }
 
+a {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+li > a .active {
+  background-color: gray;
+  border-radius: 5px;
+  color: #fff;
+}
+
+li > a {
+  color: black;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+li:hover, li:hover > a {
+  background-color: gray;
+  border-radius: 5px;
+  color: #fff;
+}
+
 /* This is styles for main */
 .main {
-  background-color: cadetblue;
   grid-area: main;
-
-  margin-top: 10px;
+  background-color: lightslategrey;
+  color: #fff;
 }
 
 .title-main {
-  font-size: 50px;
+  font-size: 100px;
+  margin-bottom: 0;
 }
 
 .main > section {
-  width: 50vw;
   height: auto;
+  width: 60vw;
+  float: right;
+  text-align: right;
+  margin: 0 5vw 0 0;
+  height: 100vh;
+  display: inline-table;
+}
+
+.title-section {
+  border-bottom: 3px solid violet;
+  font-size: 50px;
+  margin-top: 100px;
+}
+
+.main #section2, .main #section4 {
+  float: left;
+  text-align: left;
+  margin-left: 5vw;
+
 }
 
 /* This is styles for footer */
 .footer {
-  background-color: azure;
+  background-color: lightslategrey;
   grid-area: ft;
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 50px;
+  border-top: 2px solid violet;
 }
