@@ -124,11 +124,6 @@ li > a {
   width: 40px;
   border-radius: 100%;
   border: none;
-  /* display: none; */
-}
-
-#btn-top.active {
-  display: inline-block;
 }
 
 /* This is styles for footer */
@@ -152,9 +147,19 @@ li > a {
   .title-main {
     font-size: 50px;
   }
+
   .main {
     width: auto;
   }
+
+  .title-section {
+    margin-top: 0px;
+  }
+
+  .main > section {
+    margin-top: 100px;
+  }
+
   li:active > a {
     background-color: gray;
     border-radius: 5px;
@@ -167,12 +172,15 @@ li > a {
   body {
     font-size: 18px;
   }
+
   .title-main {
     font-size: 70px;
   }
+
   .container {
     grid-template-rows: 70px auto 50px;
   }
+
   .header {
     height: 70px;
   }
