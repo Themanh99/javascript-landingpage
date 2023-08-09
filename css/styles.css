@@ -1,7 +1,7 @@
 body {
   font-size: 20px;
   scroll-behavior: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -64,7 +64,7 @@ a {
   font-weight: 800;
 }
 
-li > a .active {
+li > a.active {
   background-color: gray;
   border-radius: 5px;
   color: #fff;
@@ -75,12 +75,6 @@ li > a {
   height: 100%;
   align-items: center;
   display: flex;
-}
-
-li:hover, li:hover > a {
-  background-color: gray;
-  border-radius: 5px;
-  color: #fff;
 }
 
 /* This is styles for main */
@@ -105,17 +99,36 @@ li:hover, li:hover > a {
   display: inline-table;
 }
 
+.main > section.active {
+  background-color: rgb(138, 145, 151);
+}
+
 .title-section {
   border-bottom: 3px solid violet;
   font-size: 50px;
   margin-top: 100px;
 }
 
-.main #section2, .main #section4 {
+.main #section2,
+.main #section4 {
   float: left;
   text-align: left;
   margin-left: 5vw;
+}
 
+.btn-top {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  border: none;
+  /* display: none; */
+}
+
+#btn-top.active {
+  display: inline-block;
 }
 
 /* This is styles for footer */
@@ -126,5 +139,50 @@ li:hover, li:hover > a {
   justify-content: center;
   align-items: center;
   min-height: 50px;
-  border-top: 2px solid violet;
+  margin-top: 10px;
+}
+
+/* This is styles for responsive */
+
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 16px;
+  }
+
+  .title-main {
+    font-size: 50px;
+  }
+  .main {
+    width: auto;
+  }
+  li:active > a {
+    background-color: gray;
+    border-radius: 5px;
+    color: #fff;
+  }
+}
+
+/* Tablet devices (768px and down 1278px) */
+@media only screen and (min-width: 768px) and (max-width: 1278px) {
+  body {
+    font-size: 18px;
+  }
+  .title-main {
+    font-size: 70px;
+  }
+  .container {
+    grid-template-rows: 70px auto 50px;
+  }
+  .header {
+    height: 70px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  li:hover > a {
+    background-color: gray;
+    border-radius: 5px;
+    color: #fff;
+  }
 }
