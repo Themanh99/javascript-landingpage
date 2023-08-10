@@ -90,12 +90,11 @@ li > a {
 }
 
 .main > section {
-  height: auto;
   width: 60vw;
   float: right;
   text-align: right;
   margin: 0 5vw 0 0;
-  height: 100vh;
+  height: 95vh;
   display: inline-table;
 }
 
@@ -144,8 +143,17 @@ li > a {
     font-size: 16px;
   }
 
+  .header #nav-ul {
+    justify-content: center;
+  }
+
+  #nav-ul > li {
+    padding: 0;
+    margin: 0 5px;
+  }
+
   .title-main {
-    font-size: 50px;
+    font-size: 40px;
   }
 
   .main {
@@ -157,7 +165,9 @@ li > a {
   }
 
   .main > section {
-    margin-top: 100px;
+    margin-top: 50px;
+    width: 80vw;
+    padding-top: 150px;
   }
 
   li:active > a {

@@ -41,36 +41,45 @@ nav.forEach((link) => {
   });
 });
 
-// Update active state based on current scroll position
+// Check if this section in view port is return true
+function isInViewPort(section, widthView) {
+  const secBounding = section.getBoundingClientRect();
+  if (widthView <= 500) {
+    return (
+      secBounding.top <= window.innerHeight &&
+      secBounding.bottom >= window.innerHeight
+    );
+  }
+  return (
+    secBounding.top > 0 &&
+    secBounding.bottom - 100 <
+      (window.innerHeight || document.documentElement.clientHeight)
+  );
+}
 window.addEventListener("scroll", function () {
   const sections = document.querySelectorAll("section");
-  const scrollPosition = window.scrollY + 100;
 
   // Scrolltop to remove active class on navigation bar
   if (window.scrollY < 99) {
     nav.forEach((li) => li.classList.remove("active"));
   }
-  sections.forEach((section) => {
-    section.classList.remove("active");
-    // View section always between top and top + height
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute("id");
-    if (
-      scrollPosition >= sectionTop &&
-      scrollPosition < sectionTop + sectionHeight
-    ) {
-      nav.forEach((li) => li.classList.remove("active"));
 
+  sections.forEach((section) => {
+    const sectionId = section.getAttribute("id");
+    if (isInViewPort(section, window.innerWidth)) {
+      /** Remove active class on navigation bar */
+      nav.forEach((li) => li.classList.remove("active"));
+      section.classList.add("active");
       document
         .querySelector(`nav a[id="#${sectionId}"]`)
         .classList.add("active");
-      section.classList.add("active");
+    } else {
+      section.classList.remove("active");
     }
   });
 });
 
-// Scroll to top
+// Start logic of button to top
 const btnTop = document.getElementById("btn-top");
 window.onscroll = function () {
   scrollDisplay();
@@ -92,3 +101,4 @@ function scrollDisplay() {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+// End logic button to top
